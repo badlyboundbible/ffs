@@ -29,16 +29,16 @@ body {
   gap: 8px;
 }
 
-.icon-group {
+.grid-layout {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
 }
 
 button {
-  padding: 16px;
-  font-size: 18px;
+  padding: 20px;
+  font-size: 20px;
   border: none;
   border-radius: 4px;
   background-color: #f1f1f1;
