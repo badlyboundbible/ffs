@@ -8,12 +8,48 @@
 </head>
 <body>
   <div class="calculator">
-    <!-- Role Selection -->
-    <div class="row">
+    <!-- Role Selection Row -->
+    <div class="row roles">
       <button class="role-icon" data-role="10" id="gk">🧤 GK</button>
       <button class="role-icon" data-role="6" id="def">🛡️ DEF</button>
       <button class="role-icon" data-role="5" id="mid">⚡ MID</button>
       <button class="role-icon" data-role="4" id="fwd">🎯 FWD</button>
+    </div>
+
+    <!-- Rows for Each Event -->
+    <div class="row penalty-miss">
+      <label>Penalty Miss</label>
+      <div class="icon-group">
+        ${Array.from({ length: 10 }).map(() => `<button class="penalty-icon">❌</button>`).join("")}
+      </div>
+    </div>
+
+    <div class="row own-goal">
+      <label>Own Goal</label>
+      <div class="icon-group">
+        ${Array.from({ length: 10 }).map(() => `<button class="own-goal-icon">⚽</button>`).join("")}
+      </div>
+    </div>
+
+    <div class="row conceded-goal">
+      <label>Conceded Goal</label>
+      <div class="icon-group">
+        ${Array.from({ length: 10 }).map(() => `<button class="conceded-icon">❌</button>`).join("")}
+      </div>
+    </div>
+
+    <div class="row assists">
+      <label>Assists</label>
+      <div class="icon-group">
+        ${Array.from({ length: 10 }).map(() => `<button class="assist-icon">🎯</button>`).join("")}
+      </div>
+    </div>
+
+    <div class="row goals">
+      <label>Goals</label>
+      <div class="icon-group">
+        ${Array.from({ length: 10 }).map(() => `<button class="goal-icon">⚽</button>`).join("")}
+      </div>
     </div>
 
     <!-- First Half and Second Half -->
@@ -22,67 +58,12 @@
       <button class="toggle-icon" data-points="1" id="second-half">⏱️ Second Half</button>
     </div>
 
-    <!-- Goal Row -->
-    <div class="row">
-      <label>🥅 Goals</label>
-      <div id="goal-row" class="icon-group">
-        <!-- 10 Goal Icons -->
-        ${Array.from({ length: 10 })
-          .map(() => `<button class="goal-icon">⚽</button>`)
-          .join("")}
-      </div>
-    </div>
-
-    <!-- Assist Row -->
-    <div class="row">
-      <label>🎯 Assists</label>
-      <div id="assist-row" class="icon-group">
-        <!-- 10 Assist Icons -->
-        ${Array.from({ length: 10 })
-          .map(() => `<button class="assist-icon">🎯</button>`)
-          .join("")}
-      </div>
-    </div>
-
-    <!-- Conceded Goal Row -->
-    <div class="row">
-      <label>🚨 Conceded Goals</label>
-      <div id="conceded-row" class="icon-group">
-        <!-- 10 Conceded Goal Icons -->
-        ${Array.from({ length: 10 })
-          .map(() => `<button class="conceded-icon">❌</button>`)
-          .join("")}
-      </div>
-    </div>
-
-    <!-- Own Goal Row -->
-    <div class="row">
-      <label>⚽ Own Goals</label>
-      <div id="own-goal-row" class="icon-group">
-        <!-- 10 Own Goal Icons -->
-        ${Array.from({ length: 10 })
-          .map(() => `<button class="own-goal-icon">⚽</button>`)
-          .join("")}
-      </div>
-    </div>
-
-    <!-- Penalty Miss Row -->
-    <div class="row">
-      <label>❌ Penalty Miss</label>
-      <div id="penalty-miss-row" class="icon-group">
-        <!-- 10 Penalty Miss Icons -->
-        ${Array.from({ length: 10 })
-          .map(() => `<button class="penalty-icon">❌</button>`)
-          .join("")}
-      </div>
-    </div>
-
-    <!-- Total Score Display -->
-    <div class="score-display">
+    <!-- Total Score -->
+    <div class="row score-display">
       Total Score: <span id="total-score">0</span>
     </div>
-
-    <script src="script.js"></script>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
