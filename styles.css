@@ -1,18 +1,19 @@
 /* styles.css */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
+  background: linear-gradient(180deg, #4caf50, #8bc34a);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  overflow-y: auto; /* Ensure scrolling works for smaller screens */
 }
 
 .calculator {
   background-color: #ffffff;
-  border: 1px solid #ddd;
+  border: 2px solid #4caf50;
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -28,7 +29,9 @@ body {
 .row label {
   display: block;
   font-weight: bold;
+  font-size: 18px;
   margin-bottom: 8px;
+  color: #333;
 }
 
 .icon-group {
@@ -49,27 +52,102 @@ button {
   font-size: 20px;
   border: none;
   border-radius: 4px;
-  background-color: #f1f1f1;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-align: center;
+}
+
+/* Button Hover and Active States */
+button:hover {
+  transform: scale(1.05);
 }
 
 button.active {
+  transform: scale(1);
   background-color: #007bff;
   color: white;
 }
 
+/* Role Buttons */
+.role-button {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.role-button.active {
+  background-color: #388e3c;
+}
+
+/* Event Buttons */
+.event-button {
+  background-color: #f1f1f1;
+}
+
+.event-button[data-points="-3"] {
+  background-color: #ffe6e6; /* Light red for Penalty Miss */
+}
+
+.event-button[data-points="-3"].active {
+  background-color: #ff6666; /* Bright red when active */
+}
+
+.event-button[data-points="-2"] {
+  background-color: #ffefcc; /* Light orange for Own Goal */
+}
+
+.event-button[data-points="-2"].active {
+  background-color: #ffa500; /* Bright orange when active */
+}
+
+.event-button[data-points="4"] {
+  background-color: #f5f5f5; /* Neutral light gray for Clean Sheet */
+}
+
+.event-button[data-points="4"].active {
+  background-color: #4caf50; /* Green for active Clean Sheet */
+  color: white;
+}
+
+/* Goals Buttons */
+.goal-button {
+  background-color: #e8f5e9; /* Light green for Goals */
+  border: 2px solid #c8e6c9;
+}
+
+.goal-button.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #388e3c;
+}
+
+/* Score Display */
 .score-display {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 16px;
+  background-color: #2c3e50; /* Dark blue-gray for a scoreboard look */
+  color: #ecf0f1; /* White text */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Reset Button */
 .reset-button {
   background-color: #ff4444;
   color: white;
   width: 100%;
   padding: 10px;
   font-size: 16px;
+  font-weight: bold;
   border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #d32f2f;
 }
