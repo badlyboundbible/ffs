@@ -1,52 +1,77 @@
 // script.js
 
 let totalScore = 0;
-let currentRoleMultiplier = 0;
+let roleMultiplier = 0;
 
+// Update score display
 function updateScoreDisplay() {
-  document.getElementById("total-score").innerText = totalScore;
+  document.getElementById("total-score").textContent = totalScore;
 }
 
-// Role Selection
-document.querySelectorAll(".role-icon").forEach(button => {
+// Role selection logic
+document.querySelectorAll(".role-button").forEach(button => {
   button.addEventListener("click", () => {
-    // Reset total score and clear selections when role changes
-    totalScore = 0;
-    currentRoleMultiplier = parseInt(button.dataset.role);
-    document.querySelectorAll(".active").forEach(btn => btn.classList.remove("active"));
+    // Clear previous role and reset score
+    document.querySelectorAll(".role-button").forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
+
+    // Set role multiplier
+    roleMultiplier = parseInt(button.dataset.role);
+    totalScore = 0; // Reset score on role change
     updateScoreDisplay();
   });
 });
 
-// Handle icon toggles
-function handleIconToggle(rowSelector, pointsFn) {
-  document.querySelectorAll(rowSelector).forEach(button => {
-    button.addEventListener("click", () => {
-      if (button.classList.contains("active")) {
-        button.classList.remove("active");
-        totalScore -= pointsFn();
-      } else {
-        button.classList.add("active");
-        totalScore += pointsFn();
-      }
-      updateScoreDisplay();
-    });
+// Event button logic
+document.querySelectorAll(".event-button").forEach(button => {
+  button.addEventListener("click", () => {
+    const points = parseInt(button.dataset.points);
+
+    if (button.classList.contains("active")) {
+      // Deactivate button and remove points
+      button.classList.remove("active");
+      totalScore -= points;
+    } else {
+      // Activate button and add points
+      button.classList.add("active");
+      totalScore += points;
+    }
+
+    updateScoreDisplay();
   });
-}
+});
 
-// Event Handlers
-handleIconToggle(".goal-icon", () => currentRoleMultiplier);
-handleIconToggle(".assist-icon", () => 3);
-handleIconToggle(".conceded-icon", () => -1);
-handleIconToggle(".own-goal-icon", () => -2);
-handleIconToggle(".penalty-icon", () => -3);
-handleIconToggle(".toggle-icon", button => parseInt(button.dataset.points));
+// Goal button logic (uses role multiplier)
+document.querySelectorAll(".goal-button").forEach(button => {
+  button.addEventListener("click", () => {
+    if (roleMultiplier === 0) {
+      alert("Please select a role first!");
+      return;
+    }
 
-// Reset Button
+    const points = roleMultiplier;
+
+    if (button.classList.contains("active")) {
+      // Deactivate button and remove points
+      button.classList.remove("active");
+      totalScore -= points;
+    } else {
+      // Activate button and add points
+      button.classList.add("active");
+      totalScore += points;
+    }
+
+    updateScoreDisplay();
+  });
+});
+
+// Reset button logic
 document.getElementById("reset-button").addEventListener("click", () => {
   totalScore = 0;
-  currentRoleMultiplier = 0;
-  document.querySelectorAll(".active").forEach(button => button.classList.remove("active"));
+  roleMultiplier = 0;
+
+  // Clear all active buttons
+  document.querySelectorAll("button").forEach(button => button.classList.remove("active"));
+
   updateScoreDisplay();
 });
