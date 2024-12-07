@@ -24,51 +24,56 @@
 
     <!-- Goal Row -->
     <div class="row">
-      <div class="icon-group" id="goal-row">
-        <label>🥅 Goals</label>
+      <label>🥅 Goals</label>
+      <div id="goal-row" class="icon-group">
         <!-- 10 Goal Icons -->
-        <button class="goal-icon" data-points="1">⚽</button>
-        <!-- Repeat for 10 buttons -->
+        ${Array.from({ length: 10 })
+          .map(() => `<button class="goal-icon">⚽</button>`)
+          .join("")}
       </div>
     </div>
 
     <!-- Assist Row -->
     <div class="row">
-      <div class="icon-group" id="assist-row">
-        <label>🎯 Assists</label>
+      <label>🎯 Assists</label>
+      <div id="assist-row" class="icon-group">
         <!-- 10 Assist Icons -->
-        <button class="assist-icon" data-points="3">🎯</button>
-        <!-- Repeat for 10 buttons -->
+        ${Array.from({ length: 10 })
+          .map(() => `<button class="assist-icon">🎯</button>`)
+          .join("")}
       </div>
     </div>
 
     <!-- Conceded Goal Row -->
     <div class="row">
-      <div class="icon-group" id="conceded-row">
-        <label>🚨 Conceded Goals</label>
+      <label>🚨 Conceded Goals</label>
+      <div id="conceded-row" class="icon-group">
         <!-- 10 Conceded Goal Icons -->
-        <button class="conceded-icon" data-points="-1">❌</button>
-        <!-- Repeat for 10 buttons -->
+        ${Array.from({ length: 10 })
+          .map(() => `<button class="conceded-icon">❌</button>`)
+          .join("")}
       </div>
     </div>
 
     <!-- Own Goal Row -->
     <div class="row">
-      <div class="icon-group" id="own-goal-row">
-        <label>⚽ Own Goals</label>
+      <label>⚽ Own Goals</label>
+      <div id="own-goal-row" class="icon-group">
         <!-- 10 Own Goal Icons -->
-        <button class="own-goal-icon" data-points="-2">⚽</button>
-        <!-- Repeat for 10 buttons -->
+        ${Array.from({ length: 10 })
+          .map(() => `<button class="own-goal-icon">⚽</button>`)
+          .join("")}
       </div>
     </div>
 
     <!-- Penalty Miss Row -->
     <div class="row">
-      <div class="icon-group" id="penalty-miss-row">
-        <label>❌ Penalty Miss</label>
+      <label>❌ Penalty Miss</label>
+      <div id="penalty-miss-row" class="icon-group">
         <!-- 10 Penalty Miss Icons -->
-        <button class="penalty-icon" data-points="-3">❌</button>
-        <!-- Repeat for 10 buttons -->
+        ${Array.from({ length: 10 })
+          .map(() => `<button class="penalty-icon">❌</button>`)
+          .join("")}
       </div>
     </div>
 
