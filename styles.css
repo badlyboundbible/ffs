@@ -23,13 +23,16 @@ body {
 .row {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 16px;
+  align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
 .icon-group {
-  text-align: center;
-  margin: 8px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 button {
@@ -41,10 +44,6 @@ button {
   background-color: #f1f1f1;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-button:active {
-  transform: scale(0.95);
 }
 
 button.active {
