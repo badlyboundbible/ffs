@@ -5,46 +5,45 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden; /* Prevent accidental scrolling of the body */
-  height: 100vh; /* Full height for proper scroll handling */
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* Start content from the top */
 }
 
 .calculator-container {
   width: 100%;
   max-width: 400px;
-  height: 100%;
+  height: 100%; /* Full height for proper scroll handling */
   overflow-y: auto; /* Enable scrolling within the container */
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 24px; /* Add padding for breathing room */
+  padding: 32px 16px; /* Larger padding for breathing room */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 24px; /* Larger spacing between rows */
+  gap: 32px; /* Larger spacing between rows */
 }
 
 .row {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px; /* Increased spacing between row elements */
+  gap: 12px;
 }
 
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px; /* Increased spacing between buttons in the grid */
-  justify-content: center;
 }
 
 button {
-  padding: 20px;
-  font-size: 36px; /* Make emojis larger */
+  padding: 24px;
+  font-size: 40px; /* Make emojis larger */
   border: none;
-  border-radius: 8px; /* Rounder buttons */
+  border-radius: 12px; /* Rounded buttons */
   background-color: #f1f1f1;
   cursor: pointer;
   display: flex;
@@ -69,16 +68,16 @@ button.active {
 }
 
 .score-display {
-  font-size: 24px; /* Increase the font size for the score */
+  font-size: 24px;
   text-align: center;
 }
 
 #reset-button {
   width: 100%;
-  padding: 16px; /* Add more padding for the reset button */
-  font-size: 18px; /* Larger font size for reset button */
+  padding: 16px;
+  font-size: 18px;
   background-color: #ff4444;
   color: white;
   border: none;
-  border-radius: 8px; /* Match the button styling */
+  border-radius: 8px;
 }
