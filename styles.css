@@ -4,50 +4,50 @@ body {
   background-color: #f8f9fa;
   margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
 .calculator {
-  width: 90%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 400px;
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-rows: auto auto auto auto auto auto auto auto;
-  grid-gap: 16px;
 }
 
 .row {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 8px;
 }
 
 .roles {
   display: flex;
-  justify-content: center;
-  gap: 16px;
+  justify-content: space-around;
 }
 
 .icon-group {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
 button {
-  padding: 10px;
-  font-size: 16px;
+  padding: 8px;
+  font-size: 14px;
   border: none;
   border-radius: 4px;
   background-color: #f1f1f1;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button.active {
@@ -56,8 +56,16 @@ button.active {
 }
 
 .score-display {
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
-  margin-top: 16px;
-  color: #333;
+}
+
+#reset-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
 }
