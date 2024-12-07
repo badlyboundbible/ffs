@@ -3,17 +3,16 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/a/a7/Football_pitch.svg') no-repeat center center fixed;
-  background-size: cover;
+  background: #007f00; /* Simple green soccer field color */
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow-y: auto;
+  align-items: flex-start;
+  min-height: 100vh;
+  overflow-y: auto; /* Enable scrolling for smaller screens */
 }
 
 .calculator {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: white;
   border: 2px solid #4caf50;
   border-radius: 16px;
   padding: 20px;
@@ -43,6 +42,13 @@ body {
   flex-wrap: wrap;
 }
 
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Force 2 rows of 5 buttons for 10-button sections */
+  gap: 8px;
+  justify-content: center;
+}
+
 button {
   padding: 12px;
   font-size: 18px;
@@ -55,6 +61,7 @@ button {
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
+  background-color: #f5f5f5;
 }
 
 button:active {
@@ -85,51 +92,41 @@ button:active {
 
 /* Clean Sheet button */
 .event-button[data-points="4"] {
-  background-color: #ffffff;
-  color: #000;
+  background-color: white;
+  color: #333;
   border: 2px solid #ddd;
 }
 
 .event-button[data-points="4"].active {
   background-color: #4caf50;
   color: white;
-  border: 2px solid #388e3c;
 }
 
 /* Penalty Miss */
 .event-button[data-points="-3"] {
-  background-color: #ffcccc;
+  background-color: #ffcdd2;
   color: #c00;
 }
 
 .event-button[data-points="-3"].active {
-  background-color: #ff6666;
-}
-
-/* Own Goal */
-.event-button[data-points="-2"] {
-  background-color: #ffefd5;
-  color: #333;
-}
-
-.event-button[data-points="-2"].active {
-  background-color: #ffbf80;
+  background-color: #e57373;
+  color: white;
 }
 
 /* Cards */
 .event-button[data-points="-1"] {
-  background-color: #ffe082; /* Yellow card color */
+  background-color: #ffe082; /* Yellow card */
   color: #333;
 }
 
 .event-button[data-points="-1"].active {
-  background-color: #ffd600;
-  color: #000;
+  background-color: #ffca28;
+  color: white;
 }
 
 .event-button[data-points="-3"] {
-  background-color: #ff5252; /* Red card color */
-  color: #fff;
+  background-color: #ff5252; /* Red card */
+  color: white;
 }
 
 .event-button[data-points="-3"].active {
@@ -138,14 +135,13 @@ button:active {
 
 /* Goals */
 .goal-button {
-  background-color: #fff;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d0/Soccerball_pattern.svg');
-  background-size: cover;
+  background-color: white;
   border: 2px solid #ddd;
 }
 
 .goal-button.active {
   border-color: #4caf50;
+  background-color: #d9f9d9;
 }
 
 /* Score Display */
