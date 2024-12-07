@@ -8,60 +8,68 @@
 </head>
 <body>
   <div class="calculator">
-    <!-- Top Row -->
-    <div class="row">
-      <button class="toggle-icon" data-points="-3" id="red-card">🟥 Red Card</button>
-      <button class="toggle-icon" data-points="-1" id="yellow-card">🟨 Yellow Card</button>
-      <button class="toggle-icon" data-points="1" id="first-half">⏱️ First Half</button>
-      <button class="toggle-icon" data-points="1" id="second-half">⏱️ Second Half</button>
-      <button class="toggle-icon" data-points="4" id="clean-sheet">🧤 Clean Sheet</button>
-    </div>
-
-    <!-- Middle Row -->
-    <div class="row">
-      <div class="dropdown-container">
-        <label for="penalty-miss">❌ Penalty Miss</label>
-        <select class="dropdown" data-points="-3" id="penalty-miss">
-          <option value="0">0</option>
-          <!-- Add 1-10 -->
-        </select>
-      </div>
-      <div class="dropdown-container">
-        <label for="own-goal">⚽ Own Goal</label>
-        <select class="dropdown" data-points="-2" id="own-goal">
-          <option value="0">0</option>
-          <!-- Add 1-10 -->
-        </select>
-      </div>
-      <div class="dropdown-container">
-        <label for="conceded-goal">🚨 Conceded Goal</label>
-        <select class="dropdown" data-points="-1" id="conceded-goal">
-          <option value="0">0</option>
-          <!-- Add 1-10 -->
-        </select>
-      </div>
-      <div class="dropdown-container">
-        <label for="goal">🥅 Goal</label>
-        <select class="dropdown" data-role="multiplier" id="goal">
-          <option value="0">0</option>
-          <!-- Add 1-10 -->
-        </select>
-      </div>
-      <div class="dropdown-container">
-        <label for="assist">🎯 Assist</label>
-        <select class="dropdown" data-points="3" id="assist">
-          <option value="0">0</option>
-          <!-- Add 1-10 -->
-        </select>
-      </div>
-    </div>
-
-    <!-- Bottom Row -->
+    <!-- Role Selection -->
     <div class="row">
       <button class="role-icon" data-role="10" id="gk">🧤 GK</button>
       <button class="role-icon" data-role="6" id="def">🛡️ DEF</button>
       <button class="role-icon" data-role="5" id="mid">⚡ MID</button>
       <button class="role-icon" data-role="4" id="fwd">🎯 FWD</button>
+    </div>
+
+    <!-- First Half and Second Half -->
+    <div class="row">
+      <button class="toggle-icon" data-points="1" id="first-half">⏱️ First Half</button>
+      <button class="toggle-icon" data-points="1" id="second-half">⏱️ Second Half</button>
+    </div>
+
+    <!-- Goal Row -->
+    <div class="row">
+      <div class="icon-group" id="goal-row">
+        <label>🥅 Goals</label>
+        <!-- 10 Goal Icons -->
+        <button class="goal-icon" data-points="1">⚽</button>
+        <!-- Repeat for 10 buttons -->
+      </div>
+    </div>
+
+    <!-- Assist Row -->
+    <div class="row">
+      <div class="icon-group" id="assist-row">
+        <label>🎯 Assists</label>
+        <!-- 10 Assist Icons -->
+        <button class="assist-icon" data-points="3">🎯</button>
+        <!-- Repeat for 10 buttons -->
+      </div>
+    </div>
+
+    <!-- Conceded Goal Row -->
+    <div class="row">
+      <div class="icon-group" id="conceded-row">
+        <label>🚨 Conceded Goals</label>
+        <!-- 10 Conceded Goal Icons -->
+        <button class="conceded-icon" data-points="-1">❌</button>
+        <!-- Repeat for 10 buttons -->
+      </div>
+    </div>
+
+    <!-- Own Goal Row -->
+    <div class="row">
+      <div class="icon-group" id="own-goal-row">
+        <label>⚽ Own Goals</label>
+        <!-- 10 Own Goal Icons -->
+        <button class="own-goal-icon" data-points="-2">⚽</button>
+        <!-- Repeat for 10 buttons -->
+      </div>
+    </div>
+
+    <!-- Penalty Miss Row -->
+    <div class="row">
+      <div class="icon-group" id="penalty-miss-row">
+        <label>❌ Penalty Miss</label>
+        <!-- 10 Penalty Miss Icons -->
+        <button class="penalty-icon" data-points="-3">❌</button>
+        <!-- Repeat for 10 buttons -->
+      </div>
     </div>
 
     <!-- Total Score Display -->
@@ -70,5 +78,6 @@
     </div>
 
     <script src="script.js"></script>
-  </body>
+  </div>
+</body>
 </html>
