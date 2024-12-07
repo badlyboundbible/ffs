@@ -3,10 +3,12 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align content at the top */
   height: 100vh;
+  overflow-y: auto; /* Enable scrolling if content exceeds screen height */
 }
 
 .calculator {
@@ -20,6 +22,7 @@ body {
   flex-direction: column;
   gap: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px; /* Add margin to prevent the top from clipping */
 }
 
 .row {
