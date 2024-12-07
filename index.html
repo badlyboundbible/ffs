@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantasy Football Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calculator">
+    <!-- Top Row -->
+    <div class="row">
+      <button class="icon" data-points="-3" id="red-card">🟥 Red Card</button>
+      <button class="icon" data-points="-1" id="yellow-card">🟨 Yellow Card</button>
+      <button class="icon" data-points="1" id="first-half">⏱️ First Half</button>
+      <button class="icon" data-points="1" id="second-half">⏱️ Second Half</button>
+      <button class="icon" data-points="4" id="clean-sheet">🧤 Clean Sheet</button>
+    </div>
+
+    <!-- Middle Row -->
+    <div class="row">
+      <div class="dropdown-container">
+        <label for="penalty-miss">❌ Penalty Miss</label>
+        <select class="dropdown" data-points="-3" id="penalty-miss">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <!-- Add up to 10 -->
+        </select>
+      </div>
+      <div class="dropdown-container">
+        <label for="own-goal">⚽ Own Goal</label>
+        <select class="dropdown" data-points="-2" id="own-goal">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <!-- Add up to 10 -->
+        </select>
+      </div>
+      <div class="dropdown-container">
+        <label for="conceded-goal">🚨 Conceded Goal</label>
+        <select class="dropdown" data-points="-1" id="conceded-goal">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <!-- Add up to 10 -->
+        </select>
+      </div>
+      <div class="dropdown-container">
+        <label for="goal">🥅 Goal</label>
+        <select class="dropdown" data-role="multiplier" id="goal">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <!-- Add up to 10 -->
+        </select>
+      </div>
+      <div class="dropdown-container">
+        <label for="assist">🎯 Assist</label>
+        <select class="dropdown" data-points="3" id="assist">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <!-- Add up to 10 -->
+        </select>
+      </div>
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="row">
+      <button class="icon role" data-role="10" id="gk">🧤 GK</button>
+      <button class="icon role" data-role="6" id="def">🛡️ DEF</button>
+      <button class="icon role" data-role="5" id="mid">⚡ MID</button>
+      <button class="icon role" data-role="4" id="fwd">🎯 FWD</button>
+    </div>
+
+    <!-- Total Score Display -->
+    <div class="score-display">
+      Total Score: <span id="total-score">0</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
