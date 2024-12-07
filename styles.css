@@ -1,25 +1,23 @@
 /* styles.css */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #007f00; /* Simple green soccer field color */
+  background-color: #f8f9fa;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
-  overflow-y: auto; /* Enable scrolling for smaller screens */
 }
 
 .calculator {
-  background-color: white;
-  border: 2px solid #4caf50;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 500px;
-  margin: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
 }
 
 .row {
@@ -30,8 +28,6 @@ body {
 .row label {
   display: block;
   font-weight: bold;
-  font-size: 18px;
-  color: #333;
   margin-bottom: 8px;
 }
 
@@ -44,132 +40,36 @@ body {
 
 .grid-layout {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Force 2 rows of 5 buttons for 10-button sections */
+  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
-  justify-content: center;
 }
 
 button {
   padding: 12px;
-  font-size: 18px;
+  font-size: 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
+  background-color: #f1f1f1;
   cursor: pointer;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-  background-color: #f5f5f5;
 }
 
-button:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Role buttons */
-.role-button {
-  background-color: #4caf50;
-  color: white;
-  font-weight: bold;
-}
-
-.role-button.active {
-  background-color: #388e3c;
-}
-
-/* Event buttons */
-.event-button {
-  background-color: #f5f5f5;
-}
-
-.event-button.active {
-  background-color: #ffeb3b;
-  color: #333;
-}
-
-/* Clean Sheet button */
-.event-button[data-points="4"] {
-  background-color: white;
-  color: #333;
-  border: 2px solid #ddd;
-}
-
-.event-button[data-points="4"].active {
-  background-color: #4caf50;
+button.active {
+  background-color: #007bff;
   color: white;
 }
 
-/* Penalty Miss */
-.event-button[data-points="-3"] {
-  background-color: #ffcdd2;
-  color: #c00;
-}
-
-.event-button[data-points="-3"].active {
-  background-color: #e57373;
-  color: white;
-}
-
-/* Cards */
-.event-button[data-points="-1"] {
-  background-color: #ffe082; /* Yellow card */
-  color: #333;
-}
-
-.event-button[data-points="-1"].active {
-  background-color: #ffca28;
-  color: white;
-}
-
-.event-button[data-points="-3"] {
-  background-color: #ff5252; /* Red card */
-  color: white;
-}
-
-.event-button[data-points="-3"].active {
-  background-color: #d50000;
-}
-
-/* Goals */
-.goal-button {
-  background-color: white;
-  border: 2px solid #ddd;
-}
-
-.goal-button.active {
-  border-color: #4caf50;
-  background-color: #d9f9d9;
-}
-
-/* Score Display */
 .score-display {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
 }
 
-/* Reset Button */
 .reset-button {
-  background-color: #f44336;
+  background-color: #ff4444;
   color: white;
   width: 100%;
-  padding: 12px;
-  font-size: 18px;
-  border-radius: 8px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.reset-button:hover {
-  background-color: #d32f2f;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
 }
