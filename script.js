@@ -8,18 +8,26 @@ function updateScoreDisplay() {
   document.getElementById("total-score").textContent = totalScore;
 }
 
+// Reset all buttons and score
+function resetAll() {
+  totalScore = 0;
+  roleMultiplier = 0;
+  document.querySelectorAll("button").forEach(button => button.classList.remove("active"));
+  updateScoreDisplay();
+}
+
 // Role selection logic
 document.querySelectorAll(".role-button").forEach(button => {
   button.addEventListener("click", () => {
-    // Clear previous role and reset score
+    // Reset everything when a role is changed
+    resetAll();
+
+    // Activate the selected role
     document.querySelectorAll(".role-button").forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
 
     // Set role multiplier
     roleMultiplier = parseInt(button.dataset.role);
-    totalScore = 0; // Reset score on role change
-    document.querySelectorAll("button.active").forEach(btn => btn.classList.remove("active")); // Clear other active buttons
-    updateScoreDisplay();
   });
 });
 
@@ -40,7 +48,7 @@ document.querySelectorAll(".event-button").forEach(button => {
   });
 });
 
-// Goal button logic (uses role multiplier)
+// Goal button logic (depends on role multiplier)
 document.querySelectorAll(".goal-button").forEach(button => {
   button.addEventListener("click", () => {
     if (roleMultiplier === 0) {
@@ -63,9 +71,4 @@ document.querySelectorAll(".goal-button").forEach(button => {
 });
 
 // Reset button logic
-document.getElementById("reset-button").addEventListener("click", () => {
-  totalScore = 0;
-  roleMultiplier = 0;
-  document.querySelectorAll("button").forEach(button => button.classList.remove("active"));
-  updateScoreDisplay();
-});
+document.getElementById("reset-button").addEventListener("click", resetAll);
