@@ -8,11 +8,6 @@
 </head>
 <body>
   <div class="calculator">
-    <!-- Score Display -->
-    <div class="score-display">
-      Total Score: <span id="total-score">0</span>
-    </div>
-
     <!-- Role Selection -->
     <div class="row">
       <label>Select Role</label>
@@ -30,46 +25,6 @@
       <div class="icon-group">
         <button class="event-button" data-points="1">⏱️ First Half</button>
         <button class="event-button" data-points="1">⏱️ Second Half</button>
-      </div>
-    </div>
-
-    <!-- Event Buttons -->
-    <div class="row">
-      <label>Penalty Miss (-3 each)</label>
-      <div class="icon-group">
-        <button class="event-button" data-points="-3">❌</button>
-        <button class="event-button" data-points="-3">❌</button>
-        <button class="event-button" data-points="-3">❌</button>
-        <button class="event-button" data-points="-3">❌</button>
-        <button class="event-button" data-points="-3">❌</button>
-      </div>
-    </div>
-
-    <div class="row">
-      <label>Own Goal (-2 each)</label>
-      <div class="icon-group">
-        <button class="event-button" data-points="-2">⚽</button>
-        <button class="event-button" data-points="-2">⚽</button>
-        <button class="event-button" data-points="-2">⚽</button>
-        <button class="event-button" data-points="-2">⚽</button>
-        <button class="event-button" data-points="-2">⚽</button>
-      </div>
-    </div>
-
-    <!-- Conceded Goal -->
-    <div class="row">
-      <label>Conceded Goal (-1 each)</label>
-      <div class="icon-group grid-layout">
-        <button class="event-button" data-points="-1">❌</button>
-        <button class="event-button" data-points="-1">❌</button>
-        <button class="event-button" data-points="-1">❌</button>
-        <button class="event-button" data-points="-1">❌</button>
-        <button class="event-button" data-points="-1">❌</button>
-        <button class="event-button" data-points="-1">❌</button>
-        <button class="event-button" data-points="-1">❌</button>
-        <button class="event-button" data-points="-1">❌</button>
-        <button class="event-button" data-points="-1">❌</button>
-        <button class="event-button" data-points="-1">❌</button>
       </div>
     </div>
 
@@ -105,6 +60,52 @@
         <button class="event-button" data-points="3">🎯</button>
         <button class="event-button" data-points="3">🎯</button>
       </div>
+    </div>
+
+    <!-- Conceded Goal -->
+    <div class="row">
+      <label>Conceded Goal (-1 each)</label>
+      <div class="icon-group grid-layout">
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+      </div>
+    </div>
+
+    <!-- Own Goal -->
+    <div class="row">
+      <label>Own Goal (-2 each)</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="-2">⚽</button>
+        <button class="event-button" data-points="-2">⚽</button>
+        <button class="event-button" data-points="-2">⚽</button>
+        <button class="event-button" data-points="-2">⚽</button>
+        <button class="event-button" data-points="-2">⚽</button>
+      </div>
+    </div>
+
+    <!-- Penalty Miss -->
+    <div class="row">
+      <label>Penalty Miss (-3 each)</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="-3">❌</button>
+        <button class="event-button" data-points="-3">❌</button>
+        <button class="event-button" data-points="-3">❌</button>
+        <button class="event-button" data-points="-3">❌</button>
+        <button class="event-button" data-points="-3">❌</button>
+      </div>
+    </div>
+
+    <!-- Total Score -->
+    <div class="score-display">
+      Total Score: <span id="total-score">0</span>
     </div>
 
     <!-- Reset Button -->
