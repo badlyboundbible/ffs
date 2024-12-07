@@ -18,6 +18,7 @@ document.querySelectorAll(".role-button").forEach(button => {
     // Set role multiplier
     roleMultiplier = parseInt(button.dataset.role);
     totalScore = 0; // Reset score on role change
+    document.querySelectorAll("button.active").forEach(btn => btn.classList.remove("active")); // Clear other active buttons
     updateScoreDisplay();
   });
 });
@@ -28,11 +29,9 @@ document.querySelectorAll(".event-button").forEach(button => {
     const points = parseInt(button.dataset.points);
 
     if (button.classList.contains("active")) {
-      // Deactivate button and remove points
       button.classList.remove("active");
       totalScore -= points;
     } else {
-      // Activate button and add points
       button.classList.add("active");
       totalScore += points;
     }
@@ -52,11 +51,9 @@ document.querySelectorAll(".goal-button").forEach(button => {
     const points = roleMultiplier;
 
     if (button.classList.contains("active")) {
-      // Deactivate button and remove points
       button.classList.remove("active");
       totalScore -= points;
     } else {
-      // Activate button and add points
       button.classList.add("active");
       totalScore += points;
     }
@@ -69,9 +66,6 @@ document.querySelectorAll(".goal-button").forEach(button => {
 document.getElementById("reset-button").addEventListener("click", () => {
   totalScore = 0;
   roleMultiplier = 0;
-
-  // Clear all active buttons
   document.querySelectorAll("button").forEach(button => button.classList.remove("active"));
-
   updateScoreDisplay();
 });
