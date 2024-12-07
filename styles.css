@@ -35,6 +35,13 @@ body {
   display: flex;
   justify-content: center;
   gap: 8px;
+  flex-wrap: wrap;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
 }
 
 button {
