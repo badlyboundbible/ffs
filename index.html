@@ -8,114 +8,57 @@
 </head>
 <body>
   <div class="calculator">
-    <!-- Penalty Miss Row -->
-    <div class="row">
-      <label class="row-label">Penalty Miss</label>
-      <div class="icon-group">
-        <button class="penalty-icon">❌</button>
-        <button class="penalty-icon">❌</button>
-        <button class="penalty-icon">❌</button>
-        <button class="penalty-icon">❌</button>
-        <button class="penalty-icon">❌</button>
-        <button class="penalty-icon">❌</button>
-        <button class="penalty-icon">❌</button>
-        <button class="penalty-icon">❌</button>
-        <button class="penalty-icon">❌</button>
-        <button class="penalty-icon">❌</button>
-      </div>
-    </div>
-
-    <!-- Own Goal Row -->
-    <div class="row">
-      <label class="row-label">Own Goal</label>
-      <div class="icon-group">
-        <button class="own-goal-icon">⚽</button>
-        <button class="own-goal-icon">⚽</button>
-        <button class="own-goal-icon">⚽</button>
-        <button class="own-goal-icon">⚽</button>
-        <button class="own-goal-icon">⚽</button>
-        <button class="own-goal-icon">⚽</button>
-        <button class="own-goal-icon">⚽</button>
-        <button class="own-goal-icon">⚽</button>
-        <button class="own-goal-icon">⚽</button>
-        <button class="own-goal-icon">⚽</button>
-      </div>
-    </div>
-
-    <!-- Conceded Goal Row -->
-    <div class="row">
-      <label class="row-label">Conceded Goal</label>
-      <div class="icon-group">
-        <button class="conceded-icon">❌</button>
-        <button class="conceded-icon">❌</button>
-        <button class="conceded-icon">❌</button>
-        <button class="conceded-icon">❌</button>
-        <button class="conceded-icon">❌</button>
-        <button class="conceded-icon">❌</button>
-        <button class="conceded-icon">❌</button>
-        <button class="conceded-icon">❌</button>
-        <button class="conceded-icon">❌</button>
-        <button class="conceded-icon">❌</button>
-      </div>
-    </div>
-
-    <!-- Assists Row -->
-    <div class="row">
-      <label class="row-label">Assists</label>
-      <div class="icon-group">
-        <button class="assist-icon">🎯</button>
-        <button class="assist-icon">🎯</button>
-        <button class="assist-icon">🎯</button>
-        <button class="assist-icon">🎯</button>
-        <button class="assist-icon">🎯</button>
-        <button class="assist-icon">🎯</button>
-        <button class="assist-icon">🎯</button>
-        <button class="assist-icon">🎯</button>
-        <button class="assist-icon">🎯</button>
-        <button class="assist-icon">🎯</button>
-      </div>
-    </div>
-
-    <!-- Goals Row -->
-    <div class="row">
-      <label class="row-label">Goals</label>
-      <div class="icon-group">
-        <button class="goal-icon">⚽</button>
-        <button class="goal-icon">⚽</button>
-        <button class="goal-icon">⚽</button>
-        <button class="goal-icon">⚽</button>
-        <button class="goal-icon">⚽</button>
-        <button class="goal-icon">⚽</button>
-        <button class="goal-icon">⚽</button>
-        <button class="goal-icon">⚽</button>
-        <button class="goal-icon">⚽</button>
-        <button class="goal-icon">⚽</button>
-      </div>
-    </div>
-
-    <!-- First and Second Half -->
-    <div class="row">
-      <label class="row-label">Game Time</label>
-      <div class="icon-group">
-        <button class="toggle-icon">⏱️ 1st Half</button>
-        <button class="toggle-icon">⏱️ 2nd Half</button>
-      </div>
+    <!-- Score Display -->
+    <div class="score-display">
+      Total Score: <span id="total-score">0</span>
     </div>
 
     <!-- Role Selection -->
     <div class="row">
-      <label class="row-label">Select Role</label>
+      <label>Select Role</label>
       <div class="icon-group">
-        <button class="role-icon">🧤 GK</button>
-        <button class="role-icon">🛡️ DEF</button>
-        <button class="role-icon">⚡ MID</button>
-        <button class="role-icon">🎯 FWD</button>
+        <button class="role-button" data-role="10">🧤 GK</button>
+        <button class="role-button" data-role="6">🛡️ DEF</button>
+        <button class="role-button" data-role="5">⚡ MID</button>
+        <button class="role-button" data-role="4">🎯 FWD</button>
       </div>
     </div>
 
-    <!-- Total Score -->
-    <div class="row score-display">
-      Total Score: <span id="total-score">0</span>
+    <!-- Event Rows -->
+    <div class="row">
+      <label>Penalty Miss</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="-3">❌</button>
+        <button class="event-button" data-points="-3">❌</button>
+        <button class="event-button" data-points="-3">❌</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Own Goal</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="-2">⚽</button>
+        <button class="event-button" data-points="-2">⚽</button>
+        <button class="event-button" data-points="-2">⚽</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Goals</label>
+      <div class="icon-group">
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Assists</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="3">🎯</button>
+        <button class="event-button" data-points="3">🎯</button>
+        <button class="event-button" data-points="3">🎯</button>
+      </div>
     </div>
 
     <!-- Reset Button -->
@@ -123,5 +66,7 @@
       <button id="reset-button" class="reset-button">Reset</button>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
