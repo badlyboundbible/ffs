@@ -10,7 +10,6 @@ function updateScoreDisplay() {
 // Role Selection
 document.querySelectorAll(".role-icon").forEach(button => {
   button.addEventListener("click", () => {
-    // Clear active state
     document.querySelectorAll(".role-icon").forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
     currentRoleMultiplier = parseInt(button.dataset.role);
@@ -18,7 +17,7 @@ document.querySelectorAll(".role-icon").forEach(button => {
   });
 });
 
-// Handle icon toggles for a given row
+// Handle icon toggles
 function handleIconToggle(rowSelector, pointsFn) {
   document.querySelectorAll(rowSelector).forEach(button => {
     button.addEventListener("click", () => {
@@ -34,20 +33,18 @@ function handleIconToggle(rowSelector, pointsFn) {
   });
 }
 
-// Goal Icons: Use the selected role multiplier
+// Event Handlers
 handleIconToggle(".goal-icon", () => currentRoleMultiplier);
-
-// Assist Icons: Each is worth 3 points
 handleIconToggle(".assist-icon", () => 3);
-
-// Conceded Goal Icons: Each is worth -1 point
 handleIconToggle(".conceded-icon", () => -1);
-
-// Own Goal Icons: Each is worth -2 points
 handleIconToggle(".own-goal-icon", () => -2);
-
-// Penalty Miss Icons: Each is worth -3 points
 handleIconToggle(".penalty-icon", () => -3);
-
-// First Half and Second Half Toggles
 handleIconToggle(".toggle-icon", button => parseInt(button.dataset.points));
+
+// Reset Button
+document.getElementById("reset-button").addEventListener("click", () => {
+  totalScore = 0;
+  currentRoleMultiplier = 0;
+  document.querySelectorAll(".active").forEach(button => button.classList.remove("active"));
+  updateScoreDisplay();
+});
