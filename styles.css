@@ -4,25 +4,26 @@ body {
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
+  overflow: hidden; /* Prevent accidental scrolling of the body */
+  height: 100vh; /* Full height for proper scroll handling */
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align content at the top */
-  height: 100vh;
-  overflow-y: auto; /* Enable scrolling if content exceeds screen height */
+  align-items: center;
 }
 
-.calculator {
+.calculator-container {
   width: 100%;
   max-width: 400px;
+  height: 100%; /* Take up full height of viewport */
+  overflow-y: auto; /* Enable scrolling within the container */
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 16px; /* Add margin to prevent the top from clipping */
 }
 
 .row {
