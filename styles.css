@@ -1,14 +1,14 @@
 /* styles.css */
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(180deg, #4caf50, #8bc34a);
+  background: linear-gradient(180deg, #4caf50, #8bc34a); /* Subtle soccer field gradient */
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  overflow-y: auto; /* Ensure scrolling works for smaller screens */
+  overflow-y: auto; /* Ensure scrolling for smaller screens */
 }
 
 .calculator {
@@ -19,6 +19,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   width: 100%;
+  margin-top: 20px; /* Add spacing at the top */
 }
 
 .row {
@@ -43,7 +44,7 @@ body {
 
 .grid-layout {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr); /* Ensures 2 rows of 5 for 10 buttons */
   gap: 8px;
 }
 
@@ -70,13 +71,13 @@ button.active {
 
 /* Role Buttons */
 .role-button {
-  background-color: #76c88a; /* Slightly lighter green */
+  background-color: #76c88a; /* Lighter green */
   color: white;
   font-weight: bold;
 }
 
 .role-button.active {
-  background-color: #388e3c; /* Dark green when active */
+  background-color: #388e3c; /* Darker green */
 }
 
 /* Event Buttons */
@@ -84,20 +85,15 @@ button.active {
   background-color: #f1f1f1;
 }
 
+/* Red Card Button */
 .event-button[data-points="-3"] {
-  background-color: #ffe6e6; /* Light red for Penalty Miss */
+  background-color: #ffe6e6; /* Light red */
+  color: #000; /* Black text */
 }
 
 .event-button[data-points="-3"].active {
   background-color: #ff6666; /* Bright red when active */
-}
-
-.event-button[data-points="-2"] {
-  background-color: #ffefcc; /* Light orange for Own Goal */
-}
-
-.event-button[data-points="-2"].active {
-  background-color: #ffa500; /* Bright orange when active */
+  color: #000; /* Black text */
 }
 
 /* Yellow Card Button */
@@ -108,6 +104,28 @@ button.active {
 
 .event-button[data-points="-1"].active {
   background-color: #ffd600; /* Dark yellow when active */
+  color: #333;
+}
+
+/* Own Goal Button */
+.event-button[data-points="-2"] {
+  background-color: #ffefcc; /* Light orange */
+}
+
+.event-button[data-points="-2"].active {
+  background-color: #ffa500; /* Bright orange when active */
+  color: white;
+}
+
+/* Clean Sheet Button */
+.event-button[data-points="4"] {
+  background-color: #f5f5f5; /* Light gray */
+  color: #000; /* Black text */
+}
+
+.event-button[data-points="4"].active {
+  background-color: #4caf50; /* Green for active */
+  color: #000; /* Black text */
 }
 
 /* Assists Button */
@@ -117,30 +135,20 @@ button.active {
 }
 
 .event-button[data-points="3"].active {
-  background-color: #64b5f6; /* Brighter blue when active */
+  background-color: #64b5f6; /* Bright blue when active */
   color: white;
 }
 
 /* Goals Buttons */
 .goal-button {
-  background-color: #e8f5e9; /* Light green for Goals */
+  background-color: #e8f5e9; /* Light green */
   border: 2px solid #c8e6c9;
 }
 
 .goal-button.active {
-  background-color: #4caf50;
+  background-color: #4caf50; /* Darker green when active */
   color: white;
   border-color: #388e3c;
-}
-
-/* Clean Sheet Button */
-.event-button[data-points="4"] {
-  background-color: #f5f5f5; /* Neutral light gray for Clean Sheet */
-}
-
-.event-button[data-points="4"].active {
-  background-color: #4caf50; /* Green for active Clean Sheet */
-  color: white;
 }
 
 /* Score Display */
@@ -149,7 +157,7 @@ button.active {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 16px;
-  background-color: #2c3e50; /* Dark blue-gray for a scoreboard look */
+  background-color: #2c3e50; /* Dark blue-gray for scoreboard */
   color: #ecf0f1; /* White text */
   padding: 10px;
   border-radius: 8px;
