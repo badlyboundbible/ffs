@@ -10,9 +10,11 @@ function updateScoreDisplay() {
 // Role Selection
 document.querySelectorAll(".role-icon").forEach(button => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".role-icon").forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
+    // Reset total score and clear selections when role changes
+    totalScore = 0;
     currentRoleMultiplier = parseInt(button.dataset.role);
+    document.querySelectorAll(".active").forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
     updateScoreDisplay();
   });
 });
