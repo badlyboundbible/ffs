@@ -4,128 +4,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fantasy Football Calculator</title>
-  <style>
-    /* Basic layout and colors */
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #f0f0f0;
-    }
-    
-    .calculator {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    /* Button groups */
-    .button-group {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-    }
-    
-    /* Buttons */
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      background: #e0e0e0;
-    }
-    
-    button.active {
-      background: #4CAF50;
-      color: white;
-    }
-    
-    /* Input fields */
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-    }
-    
-    /* Headers and labels */
-    h2 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-    
-    /* Score display */
-    .score-display {
-      font-size: 24px;
-      font-weight: bold;
-      margin: 20px 0;
-      padding: 10px;
-      background: #4CAF50;
-      color: white;
-      border-radius: 4px;
-      text-align: center;
-    }
-    
-    /* Calculator sections */
-    .section {
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
-    }
-  </style>
+  <link rel="stylesheet" href="stylescalc.css">
 </head>
 <body>
   <div class="calculator">
-    <h2>Match Points Calculator</h2>
-    
     <!-- Role Selection -->
-    <div class="section">
-      <label>Role:</label>
-      <div class="button-group">
-        <button class="role-button" data-role="10">GK</button>
-        <button class="role-button" data-role="6">DEF</button>
-        <button class="role-button" data-role="5">MID</button>
-        <button class="role-button" data-role="4">FWD</button>
+    <div class="row">
+      <label>Select Role</label>
+      <div class="icon-group">
+        <button class="role-button" data-role="10">🧤 GK</button>
+        <button class="role-button" data-role="6">🛡️ DEF</button>
+        <button class="role-button" data-role="5">⚡ MID</button>
+        <button class="role-button" data-role="4">🎯 FWD</button>
       </div>
     </div>
 
-    <!-- Game Events -->
-    <div class="section">
-      <label>Events:</label>
-      <div class="button-group">
-        <button class="event-button" data-points="1">First Half</button>
-        <button class="event-button" data-points="1">Second Half</button>
-        <button class="goal-button">Goal</button>
-        <button class="event-button" data-points="3">Assist</button>
-        <button class="event-button" data-points="-1">Conceded</button>
-        <button class="event-button" data-points="-2">Own Goal</button>
-        <button class="event-button" data-points="-3">Penalty Miss</button>
-        <button class="event-button" data-points="-3">Red Card</button>
-        <button class="event-button" data-points="-1">Yellow Card</button>
-        <button class="event-button" data-points="4">Clean Sheet</button>
+    <!-- Game Time -->
+    <div class="row">
+      <label>Game Time</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="1">⏱️ First Half</button>
+        <button class="event-button" data-points="1">⏱️ Second Half</button>
       </div>
     </div>
 
-    <!-- Score Display -->
+    <!-- Goals -->
+    <div class="row">
+      <label>Goals</label>
+      <div class="icon-group grid-layout">
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+        <button class="goal-button">⚽</button>
+      </div>
+    </div>
+
+    <!-- Assists -->
+    <div class="row">
+      <label>Assists</label>
+      <div class="icon-group grid-layout">
+        <button class="event-button" data-points="3">🥾</button>
+        <button class="event-button" data-points="3">🥾</button>
+        <button class="event-button" data-points="3">🥾</button>
+        <button class="event-button" data-points="3">🥾</button>
+        <button class="event-button" data-points="3">🥾</button>
+        <button class="event-button" data-points="3">🥾</button>
+        <button class="event-button" data-points="3">🥾</button>
+        <button class="event-button" data-points="3">🥾</button>
+        <button class="event-button" data-points="3">🥾</button>
+        <button class="event-button" data-points="3">🥾</button>
+      </div>
+    </div>
+
+    <!-- Conceded Goal -->
+    <div class="row">
+      <label>Conceded Goal</label>
+      <div class="icon-group grid-layout">
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+        <button class="event-button" data-points="-1">❌</button>
+      </div>
+    </div>
+
+    <!-- Own Goal -->
+    <div class="row">
+      <label>Own Goal</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="-2">🏈</button>
+        <button class="event-button" data-points="-2">🏈</button>
+        <button class="event-button" data-points="-2">🏈</button>
+        <button class="event-button" data-points="-2">🏈</button>
+        <button class="event-button" data-points="-2">🏈</button>
+      </div>
+    </div>
+
+    <!-- Penalty Miss -->
+    <div class="row">
+      <label>Penalty Miss</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="-3">🥅</button>
+        <button class="event-button" data-points="-3">🥅</button>
+        <button class="event-button" data-points="-3">🥅</button>
+        <button class="event-button" data-points="-3">🥅</button>
+        <button class="event-button" data-points="-3">🥅</button>
+      </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="row">
+      <label>Cards</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="-3">🟥 Red Card</button>
+        <button class="event-button" data-points="-1">🟨 Yellow Card</button>
+      </div>
+    </div>
+
+    <!-- Clean Sheet -->
+    <div class="row">
+      <label>Clean Sheet</label>
+      <div class="icon-group">
+        <button class="event-button" data-points="4">⬜️ Clean Sheet</button>
+      </div>
+    </div>
+
+    <!-- Total Score -->
     <div class="score-display">
       Total Score: <span id="total-score">0</span>
     </div>
 
-    <button id="reset-button" style="background: #ff4444; color: white; width: 100%;">Reset</button>
+    <!-- Reset Button -->
+    <div class="row">
+      <button id="reset-button" class="reset-button">Reset</button>
+    </div>
 
-    <!-- Value Calculator -->
-    <div class="section" style="margin-top: 30px;">
+    <!-- Value Calculator Section -->
+    <div class="value-calculator">
       <h2>Player Value Calculator</h2>
-      <div>
-        <label>Real World Value (£):</label>
+      <div class="row">
+        <label>Real World Value (£)</label>
         <input type="number" id="real-world-value" step="0.1" min="0" placeholder="Enter value in millions">
       </div>
       
-      <div style="margin-top: 15px;">
-        <label>Position:</label>
-        <div class="button-group">
+      <div class="row">
+        <label>Position</label>
+        <div class="position-select">
           <button class="position-button" data-bonus="6">FWD</button>
           <button class="position-button" data-bonus="5">MID</button>
           <button class="position-button" data-bonus="4">DEF</button>
@@ -133,14 +148,19 @@
         </div>
       </div>
 
-      <button id="calculate-button" style="background: #4CAF50; color: white; width: 100%; margin-top: 15px;">Calculate Value</button>
+      <!-- Calculate Button -->
+      <div class="row">
+        <button id="calculate-button" class="calculate-button">Calculate Value</button>
+      </div>
 
-      <div class="score-display" style="margin-top: 15px;">
-        FFS Value: <span id="ffs-value">£0.0</span>
+      <div class="value-display">
+        <div class="value-row">
+          <span>FFS Value:</span>
+          <span id="ffs-value">£0.0</span>
+        </div>
       </div>
     </div>
   </div>
-
   <script src="scriptcalc.js"></script>
 </body>
 </html>
