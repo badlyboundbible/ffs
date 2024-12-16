@@ -5,15 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fantasy Football Calculator</title>
   <link rel="stylesheet" href="stylescalc.css">
-  <!-- Link to the web manifest -->
-<link rel="manifest" href="manifest.json">
-
-<!-- Link to app icons -->
-<link rel="icon" sizes="192x192" href="icons/icon-192x192.png">
-<link rel="apple-touch-icon" href="icons/icon-512x512.png">
-
-<!-- Theme color for the address bar -->
-<meta name="theme-color" content="#4caf50">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" sizes="192x192" href="icons/icon-192x192.png">
+  <link rel="apple-touch-icon" href="icons/icon-512x512.png">
+  <meta name="theme-color" content="#4caf50">
 </head>
 <body>
   <div class="calculator">
@@ -137,6 +132,32 @@
     <!-- Reset Button -->
     <div class="row">
       <button id="reset-button" class="reset-button">Reset</button>
+    </div>
+
+    <!-- New Value Calculator Section -->
+    <div class="value-calculator">
+      <h2>Player Value Calculator</h2>
+      <div class="row">
+        <label>Real World Value (£)</label>
+        <input type="number" id="real-world-value" step="0.1" min="0" placeholder="Enter value in millions">
+      </div>
+      
+      <div class="row">
+        <label>Position</label>
+        <div class="position-select">
+          <button class="position-button" data-bonus="6">FWD</button>
+          <button class="position-button" data-bonus="5">MID</button>
+          <button class="position-button" data-bonus="4">DEF</button>
+          <button class="position-button" data-bonus="3">GK</button>
+        </div>
+      </div>
+
+      <div class="value-display">
+        <div class="value-row">
+          <span>FFS Value:</span>
+          <span id="ffs-value">£0.0</span>
+        </div>
+      </div>
     </div>
   </div>
   <script src="scriptcalc.js"></script>
