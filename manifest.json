@@ -2,7 +2,7 @@
   "name": "Fantasy Football Calculator",
   "short_name": "FootballCalc",
   "description": "A handy app for fantasy football scoring.",
-  "start_url": "./index.html",
+  "start_url": "./indexcalc.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4caf50",
