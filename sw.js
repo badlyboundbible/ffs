@@ -1,10 +1,10 @@
 const CACHE_NAME = "football-calculator-v1";
 const urlsToCache = [
   "./",
-  "./index.html",
-  "./styles.css",
-  "./script.js",
-  "./manifest.json",
+  "./indexcalc.html",
+  "./stylescalc.css",
+  "./scriptcalc.js",
+  "./manifestcalc.json",
   "./icons/icon-192x192.png",
   "./icons/icon-512x512.png"
 ];
