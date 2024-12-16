@@ -123,7 +123,7 @@ document.getElementById('reset-button').addEventListener('click', resetAll);
 // Register service worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('./sw.js')
+    .register('./swcalc.js')
     .then((registration) => {
       console.log('Service Worker registered with scope:', registration.scope);
     })
