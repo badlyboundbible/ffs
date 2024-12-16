@@ -8,6 +8,7 @@ const totalScoreDisplay = document.getElementById('total-score');
 const realWorldValueInput = document.getElementById('real-world-value');
 const ffsValueDisplay = document.getElementById('ffs-value');
 const positionButtons = document.querySelectorAll('.position-button');
+const calculateButton = document.getElementById('calculate-button');
 
 // Update the displayed score
 function updateScoreDisplay() {
@@ -38,9 +39,6 @@ function resetAll() {
 document.querySelectorAll('.role-button').forEach(button => {
   button.addEventListener('click', () => {
     // Reset everything when a role is changed
-    resetAll();
-
-    // Activate the selected role
     document.querySelectorAll('.role-button').forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
 
@@ -92,13 +90,6 @@ document.querySelectorAll('.goal-button').forEach(button => {
   });
 });
 
-// Value calculator logic
-const calculateButton = document.getElementById('calculate-button');
-const realWorldValueInput = document.getElementById('real-world-value');
-const ffsValueDisplay = document.getElementById('ffs-value');
-const positionButtons = document.querySelectorAll('.position-button');
-let selectedPositionBonus = 0;
-
 // Position button event listeners for value calculator
 positionButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -130,17 +121,5 @@ calculateButton.addEventListener('click', () => {
   ffsValueDisplay.textContent = `£${ffsValue.toFixed(1)}`;
 });
 
-// Reset value calculator when main reset button is clicked
-function resetValueCalculator() {
-  realWorldValueInput.value = '';
-  positionButtons.forEach(btn => btn.classList.remove('active'));
-  selectedPositionBonus = 0;
-  ffsValueDisplay.textContent = '£0.0';
-}
-
-// Add value calculator reset to main reset function
-const originalResetAll = resetAll;
-resetAll = function() {
-  originalResetAll();
-  resetValueCalculator();
-};
+// Reset button event listener
+document.getElementById('reset-button').addEventListener('click', resetAll);
