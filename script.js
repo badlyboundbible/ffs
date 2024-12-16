@@ -93,12 +93,11 @@ document.querySelectorAll('.goal-button').forEach(button => {
 });
 
 // Value calculator logic
-function calculateFFSValue() {
-  const realWorldValue = parseFloat(realWorldValueInput.value) || 0;
-  const baseValue = realWorldValue * 0.69;
-  const ffsValue = baseValue + selectedPositionBonus;
-  ffsValueDisplay.textContent = `£${ffsValue.toFixed(1)}`;
-}
+const calculateButton = document.getElementById('calculate-button');
+const realWorldValueInput = document.getElementById('real-world-value');
+const ffsValueDisplay = document.getElementById('ffs-value');
+const positionButtons = document.querySelectorAll('.position-button');
+let selectedPositionBonus = 0;
 
 // Position button event listeners for value calculator
 positionButtons.forEach(button => {
@@ -109,13 +108,39 @@ positionButtons.forEach(button => {
     button.classList.add('active');
     // Update selected position bonus
     selectedPositionBonus = parseFloat(button.dataset.bonus);
-    // Recalculate FFS value
-    calculateFFSValue();
   });
 });
 
-// Real world value input event listener
-realWorldValueInput.addEventListener('input', calculateFFSValue);
+// Calculate button event listener
+calculateButton.addEventListener('click', () => {
+  const realWorldValue = parseFloat(realWorldValueInput.value) || 0;
+  
+  if (selectedPositionBonus === 0) {
+    alert('Please select a position first!');
+    return;
+  }
+  
+  if (realWorldValue === 0) {
+    alert('Please enter a real world value!');
+    return;
+  }
+  
+  const baseValue = realWorldValue * 0.69;
+  const ffsValue = baseValue + selectedPositionBonus;
+  ffsValueDisplay.textContent = `£${ffsValue.toFixed(1)}`;
+});
 
-// Reset button event listener
-document.getElementById('reset-button').addEventListener('click', resetAll);
+// Reset value calculator when main reset button is clicked
+function resetValueCalculator() {
+  realWorldValueInput.value = '';
+  positionButtons.forEach(btn => btn.classList.remove('active'));
+  selectedPositionBonus = 0;
+  ffsValueDisplay.textContent = '£0.0';
+}
+
+// Add value calculator reset to main reset function
+const originalResetAll = resetAll;
+resetAll = function() {
+  originalResetAll();
+  resetValueCalculator();
+};
